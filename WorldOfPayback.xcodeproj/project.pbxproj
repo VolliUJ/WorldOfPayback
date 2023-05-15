@@ -14,7 +14,18 @@
 		63371C172A1214EB000CA117 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63371C162A1214EB000CA117 /* Transaction.swift */; };
 		63371C192A12151D000CA117 /* PBTransactions.json in Resources */ = {isa = PBXBuildFile; fileRef = 63371C182A12151D000CA117 /* PBTransactions.json */; };
 		63371C1C2A121DF9000CA117 /* TransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63371C1B2A121DF9000CA117 /* TransactionResponse.swift */; };
+		63371C242A121EFC000CA117 /* WorldOfPaybackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63371C232A121EFC000CA117 /* WorldOfPaybackTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		63371C252A121EFC000CA117 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63371BFC2A12147B000CA117 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63371C032A12147B000CA117;
+			remoteInfo = WorldOfPayback;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		63371C042A12147B000CA117 /* WorldOfPayback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldOfPayback.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -25,10 +36,19 @@
 		63371C162A1214EB000CA117 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		63371C182A12151D000CA117 /* PBTransactions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PBTransactions.json; sourceTree = "<group>"; };
 		63371C1B2A121DF9000CA117 /* TransactionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResponse.swift; sourceTree = "<group>"; };
+		63371C212A121EFC000CA117 /* WorldOfPaybackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldOfPaybackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		63371C232A121EFC000CA117 /* WorldOfPaybackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfPaybackTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		63371C012A12147B000CA117 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63371C1E2A121EFC000CA117 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				63371C062A12147B000CA117 /* WorldOfPayback */,
+				63371C222A121EFC000CA117 /* WorldOfPaybackTests */,
 				63371C052A12147B000CA117 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				63371C042A12147B000CA117 /* WorldOfPayback.app */,
+				63371C212A121EFC000CA117 /* WorldOfPaybackTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,6 +114,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		63371C222A121EFC000CA117 /* WorldOfPaybackTests */ = {
+			isa = PBXGroup;
+			children = (
+				63371C232A121EFC000CA117 /* WorldOfPaybackTests.swift */,
+			);
+			path = WorldOfPaybackTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,6 +142,24 @@
 			productReference = 63371C042A12147B000CA117 /* WorldOfPayback.app */;
 			productType = "com.apple.product-type.application";
 		};
+		63371C202A121EFC000CA117 /* WorldOfPaybackTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63371C272A121EFC000CA117 /* Build configuration list for PBXNativeTarget "WorldOfPaybackTests" */;
+			buildPhases = (
+				63371C1D2A121EFC000CA117 /* Sources */,
+				63371C1E2A121EFC000CA117 /* Frameworks */,
+				63371C1F2A121EFC000CA117 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63371C262A121EFC000CA117 /* PBXTargetDependency */,
+			);
+			name = WorldOfPaybackTests;
+			productName = WorldOfPaybackTests;
+			productReference = 63371C212A121EFC000CA117 /* WorldOfPaybackTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -124,6 +172,10 @@
 				TargetAttributes = {
 					63371C032A12147B000CA117 = {
 						CreatedOnToolsVersion = 14.3;
+					};
+					63371C202A121EFC000CA117 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 63371C032A12147B000CA117;
 					};
 				};
 			};
@@ -141,6 +193,7 @@
 			projectRoot = "";
 			targets = (
 				63371C032A12147B000CA117 /* WorldOfPayback */,
+				63371C202A121EFC000CA117 /* WorldOfPaybackTests */,
 			);
 		};
 /* End PBXProject section */
@@ -153,6 +206,13 @@
 				63371C0F2A12147C000CA117 /* Preview Assets.xcassets in Resources */,
 				63371C192A12151D000CA117 /* PBTransactions.json in Resources */,
 				63371C0C2A12147C000CA117 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63371C1F2A121EFC000CA117 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +230,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		63371C1D2A121EFC000CA117 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63371C242A121EFC000CA117 /* WorldOfPaybackTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		63371C262A121EFC000CA117 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63371C032A12147B000CA117 /* WorldOfPayback */;
+			targetProxy = 63371C252A121EFC000CA117 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		63371C102A12147C000CA117 /* Debug */ = {
@@ -345,6 +421,42 @@
 			};
 			name = Release;
 		};
+		63371C282A121EFC000CA117 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DH95596PFS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pl.volli.WorldOfPaybackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorldOfPayback.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WorldOfPayback";
+			};
+			name = Debug;
+		};
+		63371C292A121EFC000CA117 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DH95596PFS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pl.volli.WorldOfPaybackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorldOfPayback.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WorldOfPayback";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -362,6 +474,15 @@
 			buildConfigurations = (
 				63371C132A12147C000CA117 /* Debug */,
 				63371C142A12147C000CA117 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63371C272A121EFC000CA117 /* Build configuration list for PBXNativeTarget "WorldOfPaybackTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63371C282A121EFC000CA117 /* Debug */,
+				63371C292A121EFC000CA117 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
