@@ -15,6 +15,7 @@
 		63371C192A12151D000CA117 /* PBTransactions.json in Resources */ = {isa = PBXBuildFile; fileRef = 63371C182A12151D000CA117 /* PBTransactions.json */; };
 		63371C1C2A121DF9000CA117 /* TransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63371C1B2A121DF9000CA117 /* TransactionResponse.swift */; };
 		63371C242A121EFC000CA117 /* WorldOfPaybackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63371C232A121EFC000CA117 /* WorldOfPaybackTests.swift */; };
+		63371C2C2A121FB0000CA117 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 63371C2B2A121FB0000CA117 /* Nimble */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63371C2C2A121FB0000CA117 /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +140,9 @@
 			dependencies = (
 			);
 			name = WorldOfPayback;
+			packageProductDependencies = (
+				63371C2B2A121FB0000CA117 /* Nimble */,
+			);
 			productName = WorldOfPayback;
 			productReference = 63371C042A12147B000CA117 /* WorldOfPayback.app */;
 			productType = "com.apple.product-type.application";
@@ -188,6 +193,9 @@
 				Base,
 			);
 			mainGroup = 63371BFB2A12147B000CA117;
+			packageReferences = (
+				63371C2A2A121FB0000CA117 /* XCRemoteSwiftPackageReference "Nimble" */,
+			);
 			productRefGroup = 63371C052A12147B000CA117 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -488,6 +496,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		63371C2A2A121FB0000CA117 /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		63371C2B2A121FB0000CA117 /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63371C2A2A121FB0000CA117 /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 63371BFC2A12147B000CA117 /* Project object */;
 }
