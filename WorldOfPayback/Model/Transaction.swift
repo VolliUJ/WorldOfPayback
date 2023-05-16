@@ -59,8 +59,7 @@ struct Transaction: Codable {
             value = try container.decode(Value.self, forKey: .value)
             
             let dateString = try container.decode(String.self, forKey: .bookingDate)
-            let formatter = ISO8601DateFormatter()
-            bookingDate = formatter.date(from: dateString)!
+            bookingDate = DateFormatter.apiDateFormatter.date(from: dateString)!
         }
         
         func encode(to encoder: Encoder) throws {
@@ -68,8 +67,7 @@ struct Transaction: Codable {
             try? container.encode(description, forKey: .description)
             try container.encode(value, forKey: .value)
             
-            let formatter = ISO8601DateFormatter()
-            let dateString = formatter.string(from: bookingDate)
+            let dateString = DateFormatter.apiDateFormatter.string(from: bookingDate)
             try container.encode(dateString, forKey: .bookingDate)
         }
     }
