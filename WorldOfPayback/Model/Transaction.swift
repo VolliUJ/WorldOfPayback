@@ -43,7 +43,7 @@ struct Transaction: Codable {
         let value: Value
         
         struct Value: Codable {
-            let amount: Int
+            let amount: Double
             let currency: String
         }
         

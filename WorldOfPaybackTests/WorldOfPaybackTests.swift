@@ -1,35 +1,93 @@
-//
-//  WorldOfPaybackTests.swift
-//  WorldOfPaybackTests
-//
-//  Created by Marcin Golli on 15/05/2023.
-//
+import Quick
+import Nimble
+import Foundation
 
-import XCTest
+@testable import WorldOfPayback
 
-final class WorldOfPaybackTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
+class TransactionSpec: QuickSpec {
+    override func spec() {
+        var decoder: JSONDecoder!
+        
+        beforeEach {
+            decoder = JSONDecoder()
+        }
+        
+        describe("Decoding Transaction Model") {
+            context("Contains TransactionDetails.description") {
+                it("should decode JSON successfully") {
+                    let jsonString = """
+                    {
+                        "partnerDisplayName" : "REWE Group",
+                        "alias" : {
+                            "reference" : "795357452000810"
+                        },
+                        "category" : 1,
+                        "transactionDetail" : {
+                            "description" : "Punkte sammeln",
+                            "bookingDate" : "2022-07-24T10:59:05+0200",
+                            "value" : {
+                                "amount" : 124,
+                                "currency" : "PBP"
+                            }
+                        }
+                    }
+                    """
+                    
+                    let jsonData = jsonString.data(using: .utf8)!
+                    
+                    expect {
+                        let transaction = try decoder.decode(Transaction.self, from: jsonData)
+                        expect(transaction.partnerDisplayName).to(equal("REWE Group"))
+                        expect(transaction.alias.reference).to(equal("795357452000810"))
+                        expect(transaction.category).to(equal(.incoming))
+                        expect(transaction.transactionDetail.description).to(equal("Punkte sammeln"))
+                        
+                        let dateString = DateFormatter.apiDateFormatter.string(from: transaction.transactionDetail.bookingDate)
+                        expect(dateString).to(equal("2022-07-24T10:59:05+0200"))
+                        
+                        expect(transaction.transactionDetail.value.amount).to(equal(124))
+                        expect(transaction.transactionDetail.value.currency).to(equal("PBP"))
+                    }.notTo(throwError())
+                    
+                }
+            }
+            
+            context("Doesn't contain TransactionDetails.description") {
+                it("should decode JSON successfully") {
+                    let jsonString = """
+                    {
+                        "partnerDisplayName" : "REWE Group",
+                        "alias" : {
+                            "reference" : "795357452000810"
+                        },
+                        "category" : 1,
+                        "transactionDetail" : {
+                            "bookingDate" : "2022-07-24T10:59:05+0200",
+                            "value" : {
+                                "amount" : 124,
+                                "currency" : "PBP"
+                            }
+                        }
+                    }
+                    """
+                    
+                    let jsonData = jsonString.data(using: .utf8)!
+                    
+                    expect {
+                        let transaction = try decoder.decode(Transaction.self, from: jsonData)
+                        expect(transaction.partnerDisplayName).to(equal("REWE Group"))
+                        expect(transaction.alias.reference).to(equal("795357452000810"))
+                        expect(transaction.category).to(equal(.incoming))
+                        expect(transaction.transactionDetail.description).to(beNil())
+                        
+                        let dateString = DateFormatter.apiDateFormatter.string(from: transaction.transactionDetail.bookingDate)
+                        expect(dateString).to(equal("2022-07-24T10:59:05+0200"))
+                        
+                        expect(transaction.transactionDetail.value.amount).to(equal(124))
+                        expect(transaction.transactionDetail.value.currency).to(equal("PBP"))
+                    }.notTo(throwError())
+                }
+            }
         }
     }
-
 }
